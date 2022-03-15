@@ -1,0 +1,51 @@
+<%- include('static/head.ejs', { bot,user,path}) %>
+<div id="content" class="main-content">
+    <br><br><br><br><br><br>
+    <div class="container">
+
+
+    <form method="POST">
+      <input type="hidden" value="<%= _token %>" name="_token" id="_token">
+
+        <div class="form-row mb-4">
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Kod İsmi<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="codename" name="codename" placeholder="" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Kod Açıklaması<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="codedesc" name="codedesc" maxlength="100" placeholder="" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Kod Kategorisi<span style="color:red">*</span></label>
+                <select id="category" name="category" class="form-control" required>
+                    <option value="discord">Discord Hakkında Bilgiler</option>
+                  
+                    <option value="bdfd">BDFD</option>
+                    <option value="aoi.js">AOI.js</option>
+                    <option value="javascript">Discord.JS</option>    
+                    <option value="discordpy">Discord.PY</option>                      
+                    <option value="html">HTML</option>
+                  
+                    <option value="aoi.js-bilgilendirme">AOI.js Bilgilendirme</option>
+                    <option value="bdfd-bilgilendirme">BDFD Bilgilendirme</option>
+                    <option value="javascript-bilgilendirme">Discord.js Bilgilendirme</option>
+                    <option value="discordpy-bilgilendirme">Discord.py Bilgilendirme</option>
+                  <option value="html-bilgilendirme">HTML Bilgilendirme</option>
+
+                </select>
+            </div>
+         </div>
+        <div class="form-group mb-4">
+            <label for="inputAddress">Main (Optional)</label>
+            <textarea type="text" class="form-control" id="main" name="main"></textarea>
+        </div>
+         <div class="form-group">
+            <label for="inputEmail4">Kod (Optional)</label>
+            <textarea type="text" class="form-control" id="commands" name="commands"></textarea>
+        </div>
+      <button type="submit" class="btn btn-primary mt-3"><i class="fa fa-save"></i> Paylaş</button>
+    </form>
+</div>
+</div></div>
+<%- include('static/foot.ejs', { bot,user,path}) %>

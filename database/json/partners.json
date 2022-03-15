@@ -1,0 +1,20 @@
+{
+  "partners": [
+    {
+      "code": "513946525426",
+      "ownerID": "606828535423959041",
+      "icon": "https://cdn.discordapp.com/attachments/852126339238592512/924412537380929617/5bccf52dc9e48111ec82256d2bfa648a.webp",
+      "serverName": "TheMechanic's",
+      "website": "https://discord.gg/ME2F7SHKmS",
+      "description": "Sohbet edebileceğiniz bir yer "
+    },
+    {
+      "code": "513946525426",
+      "ownerID": "606828535423959041",
+      "icon": "https://cdn.discordapp.com/attachments/852126339238592512/924412537380929617/5bccf52dc9e48111ec82256d2bfa648a.webp",
+      "serverName": "TheMechanic's Botlist",
+      "website": "https://discord.gg/rP3HQr6nZn",
+      "description": "Şartsız Şekilde Botunuzu Ekletebileceğiniz Botlist Sunucumuz"
+    }
+  ]
+}

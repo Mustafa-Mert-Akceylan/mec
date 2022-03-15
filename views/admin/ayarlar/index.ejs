@@ -1,0 +1,62 @@
+<%- include('../static/head.ejs', { bot,user,path})  %>
+<center>
+<h2>
+   Web ayarları
+  </h2>
+</center>
+<div class="row">
+  
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card bg-dark-200 border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                           Web bakım modu</div>
+                  <% bakimmod.map(b => {%><div class="h5 mb-0 font-weight-bold text-white"><%= b.bakımmod %></div> 
+            <% }) %> 
+                    </div>
+                  
+                </div>
+            </div>
+        </div></a>
+    </div>
+
+   
+
+   
+  
+  
+
+  
+</div>
+
+
+
+            
+</div>
+</div>
+
+<style>
+.btn-ana{
+  border:none;
+  font-family: 'Source Sans Pro', sans-serif;
+ background-color:var(--ana);
+ border-radius:6px;
+ padding:10px;
+  color:#fff;
+  font-size: 13px;
+  height: 100%;
+}
+
+.btn-ana:hover{
+ background-color: var(--anahover);
+  opacity: 0.8;
+}
+:root{
+  --ana:#007bff;
+    --anahover:#ffa07a;
+}
+</style>
+
+        <%- include('../static/foot.ejs', { bot,user,path}) %>

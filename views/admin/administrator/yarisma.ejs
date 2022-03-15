@@ -1,0 +1,95 @@
+<%- include('../static/head.ejs', { bot,user,path})  %>
+<div id="content" class="main-content">
+    <br><br><br><br><br><br>
+    <div class="container">
+
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-6 col-12 layout-spacing">
+        <p>Yarışma forum</p>
+        <form action="/admin/yarisma/save" method="POST">
+          <input type="hidden" value="<%= _token %>" name="_token" id="_token">
+        <div class="form-row mb-4">
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Kullanıcı ID<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="userID" name="ıd" placeholder="" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Bot puanı<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="reason" name="puan" placeholder="" required>
+            </div>      
+        </div>
+         <button type="submit" name="ban" class="btn btn-primary mt-3">Kaydet</button>
+    </form>
+    </div>
+
+</div>
+
+<div class="row layout-top-spacing" id="cancel-row">
+                
+    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+        <div class="widget-content widget-content-area br-6">
+            <table id="default-ordering" class="table table-hover" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Kullanıcı</th>
+                        <th>Bot ıd</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <% pr.map(a => { %>
+                    <tr>
+                  <%if(a.yarismabotıd){%>
+                  <td><%= a.userID%></td>
+                  <td><%= a.yarismabotıd%></td>
+                 <% if(a.yarismakontrol == false){%>
+                     <td><a href="/bot/<%= a.yarismabotıd%>">Görüntüle</a></td>
+                 <%}else{%>
+                   
+                      <td><b style="color:#57E665;">Kontrol edilmiş puan:<%= a.yarismapuan%></b></td>
+                 <%}%>
+                  <%}%>
+           
+                    </tr>
+                <% }) %>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>User</th>
+                        <th>Reason</th>
+                        <th>Authorized</th>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message')
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/admin/userban';
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message')
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/admin/userban';
+  }    
+})
+    }
+   </script>
+</div></div></div>
+<%- include('../static/foot.ejs') %>
